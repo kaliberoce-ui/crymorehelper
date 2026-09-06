@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CrymoreHelper — Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #555555;
+    --border: #e2e2e2;
+    --card: #f7f7f8;
+    --accent: #2f6fed;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --text: #e8e8ea;
+      --muted: #a3a3ab;
+      --border: #2a2d34;
+      --card: #171a20;
+      --accent: #6fa1ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .updated { color: var(--muted); font-size: 13px; margin: 0 0 32px; }
+  h2 { font-size: 18px; margin: 36px 0 10px; }
+  p, li { font-size: 15px; }
+  ul { padding-left: 20px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 0 0 8px;
+  }
+  code {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 13px;
+  }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Privacy Policy — CrymoreHelper</h1>
+  <p class="updated">Last updated: 2026-09-06</p>
+
+  <div class="card">
+    <strong>Summary:</strong> CrymoreHelper does not collect, store remotely, transmit, sell, or
+    share any data. Everything it handles stays on your own computer, inside your browser's local
+    extension storage.
+  </div>
+
+  <h2>What the extension does</h2>
+  <p>
+    CrymoreHelper is a browser extension that runs only on <code>https://login.geotester.com/*</code>.
+    It reads and fills form fields on the GeoTester compaction worksheet page to speed up routine
+    data entry. It never submits or saves a GeoTester worksheet automatically — every save is
+    performed manually by the person using it, after they review what was filled in.
+  </p>
+
+  <h2>What data it stores, and where</h2>
+  <ul>
+    <li>Saved setup profiles, personnel/equipment preferences, panel settings, and tin-tracking
+      history are stored using <code>chrome.storage.local</code> — a storage area private to this
+      extension and this browser profile.</li>
+    <li>An optional, off-by-default "Tin Manager Cross-Tab Safe Mode" feature coordinates tin
+      reservations between your own open browser tabs via the extension's own background service
+      worker. This never leaves your browser and involves no external server.</li>
+    <li>None of this data is sent to any server. The extension has no backend, no analytics
+      integration, and makes no network requests of any kind.</li>
+    <li>This data is only ever read by the extension itself, only within GeoTester worksheet pages.</li>
+  </ul>
+
+  <h2>What data it does NOT do</h2>
+  <ul>
+    <li>It does not collect browsing history, personal information, or worksheet content for any
+      purpose beyond filling the fields you asked it to fill.</li>
+    <li>It does not transmit anything to the developer or any third party.</li>
+    <li>It does not use cookies, trackers, or analytics.</li>
+    <li>It does not run on any website other than <code>login.geotester.com</code>.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong><code>storage</code></strong> — to save your profiles and settings locally, as
+      described above.</li>
+    <li><strong>Host access to <code>login.geotester.com</code></strong> — to read and fill
+      worksheet fields on that site only.</li>
+  </ul>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If this extension's data practices ever change, this page will be updated to reflect that.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about this policy can be directed to the developer through the Chrome Web Store
+    listing's support contact.
+  </p>
+
+  <footer>CrymoreHelper — this page is served from GitHub Pages and contains no tracking of its own.</footer>
+</div>
+</body>
+</html>
