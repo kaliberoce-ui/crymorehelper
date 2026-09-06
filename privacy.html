@@ -71,21 +71,26 @@
   <h2>What the extension does</h2>
   <p>
     CrymoreHelper is a browser extension that runs only on <code>https://login.geotester.com/*</code>.
-    It reads and fills form fields on the GeoTester compaction worksheet page to speed up routine
-    data entry. It never submits or saves a GeoTester worksheet automatically — every save is
-    performed manually by the person using it, after they review what was filled in.
+    It is a professional/workplace lab tool for GeoTester compaction worksheets — it reads and
+    fills form fields to speed up routine data entry. It never submits or saves a GeoTester
+    worksheet automatically — every save is performed manually by the person using it, after they
+    review what was filled in.
   </p>
 
   <h2>What data it stores, and where</h2>
   <ul>
     <li>Saved setup profiles, personnel/equipment preferences, panel settings, and tin-tracking
       history are stored using <code>chrome.storage.local</code> — a storage area private to this
-      extension and this browser profile.</li>
+      extension, this browser profile, and this device. It is not a cloud account and is not
+      synced anywhere by the extension itself.</li>
     <li>An optional, off-by-default "Tin Manager Cross-Tab Safe Mode" feature coordinates tin
       reservations between your own open browser tabs via the extension's own background service
       worker. This never leaves your browser and involves no external server.</li>
     <li>As of this version, none of this data is sent to any server. The extension has no
-      backend, no analytics integration, and makes no network requests of any kind.</li>
+      backend, no analytics integration, and makes no network requests of any kind — confirmed by
+      inspection of the extension's source: it contains no <code>fetch</code>,
+      <code>XMLHttpRequest</code>, remote-script loading, or <code>eval</code>-style dynamic code
+      execution anywhere.</li>
     <li>This data is only ever read by the extension itself, only within GeoTester worksheet pages.</li>
   </ul>
 
@@ -96,6 +101,25 @@
     <li>It does not transmit anything to the developer or any third party.</li>
     <li>It does not use cookies, trackers, or analytics.</li>
     <li>It does not run on any website other than <code>login.geotester.com</code>.</li>
+    <li>It does not download, fetch, or execute any remote code. Everything the extension runs is
+      contained in the version you installed from the Chrome Web Store.</li>
+  </ul>
+
+  <h2>Security</h2>
+  <ul>
+    <li>All data handled by the extension stays inside Chrome's own per-extension storage
+      sandbox, which other extensions and ordinary web pages cannot read.</li>
+    <li>The extension requests the minimum permissions needed for its function (see
+      "Permissions" below) and nothing broader, such as access to all websites or your browsing
+      history.</li>
+    <li>Profile <strong>import/export is a manual, user-initiated action</strong>. If you export a
+      profile to a file and share that file yourself, anything in it is then outside the
+      extension's control — treat an exported profile file the same as any other document you
+      choose to send someone.</li>
+    <li>Because everything is local, the practical way to remove all data the extension holds is
+      to use its own "Full troubleshooting reset" option in Settings, or to remove the extension
+      from Chrome entirely (<code>chrome://extensions</code>) — either immediately and permanently
+      deletes its local storage.</li>
   </ul>
 
   <h2>Future data collection</h2>
@@ -105,8 +129,19 @@
     for purposes such as improving security, reliability, or functionality. Any such change would
     only take effect in a future release, would be reflected in an updated version of this policy
     before or alongside that release, and would only use permissions the extension actually
-    requests through the Chrome Web Store at that time.
+    requests through the Chrome Web Store at that time. Regardless of what is added in the
+    future, this policy commits that any future data collection will:
   </p>
+  <ul>
+    <li>never be used to sell your data, or share it with third parties for their own marketing
+      or advertising purposes;</li>
+    <li>never be broader than necessary for the stated security, reliability, or functionality
+      purpose;</li>
+    <li>be disclosed in this policy, and where required, surfaced in the extension itself, before
+      it takes effect; and</li>
+    <li>comply with Google's Chrome Web Store Developer Program Policies, including the Limited
+      Use requirements for user data.</li>
+  </ul>
 
   <h2>Permissions</h2>
   <ul>
@@ -115,6 +150,21 @@
     <li><strong>Host access to <code>login.geotester.com</code></strong> — to read and fill
       worksheet fields on that site only.</li>
   </ul>
+
+  <h2>Third-party hosting of this page</h2>
+  <p>
+    This policy is published via GitHub Pages. GitHub, as the hosting provider, may collect
+    standard web server access logs (such as IP address and request time) for its own
+    infrastructure and security purposes when you view this page. That collection is performed by
+    GitHub, not by the extension, and is governed by GitHub's own privacy statement, not this one.
+  </p>
+
+  <h2>Children's privacy</h2>
+  <p>
+    CrymoreHelper is a professional tool intended for workplace laboratory use and is not directed
+    at children. It is not intended to be used by, and does not knowingly collect information
+    from, children under 13.
+  </p>
 
   <h2>Changes to this policy</h2>
   <p>
